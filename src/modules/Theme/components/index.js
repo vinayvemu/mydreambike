@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ChangeTheme from "../components/Icons/ChangeTheme";
+import ChangeTheme from "../../../components/Icons/ChangeTheme";
 import { Menu, Dropdown } from "antd";
 
 const Theme = styled.div`

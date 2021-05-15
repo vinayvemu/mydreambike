@@ -8,7 +8,6 @@ const Drawer = ({
   title,
   width,
   onClose,
-  istitletab,
   closable,
   visible,
   content,
@@ -19,7 +18,6 @@ const Drawer = ({
 }) => (
   <AntdDrawer
     {...rest}
-    isTitleTab={istitletab}
     title={title}
     placement="right"
     width={width}

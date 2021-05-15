@@ -6,6 +6,9 @@ import { createLogger } from "redux-logger";
 import thunk from "redux-thunk";
 import reducer from "./RootReducer/index";
 import App from "./App";
+import "antd/dist/antd.css";
+
+import ThemeChange from "./modules/Theme/container/index";
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== "production") {
@@ -17,6 +20,7 @@ const store = createStore(reducer, applyMiddleware(...middleware));
 render(
   <Provider store={store}>
     <App />
+    <ThemeChange />
   </Provider>,
   document.getElementById("root")
 );
