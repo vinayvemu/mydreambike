@@ -7,6 +7,7 @@ import thunk from "redux-thunk";
 import reducer from "./RootReducer/index";
 import App from "./App";
 import "antd/dist/antd.css";
+import "./style.css";
 
 import ThemeChange from "./modules/Theme/container/index";
 
