@@ -73,6 +73,8 @@ const ImageContainer = styled.div`
       opacity: 1;
     }
   }
+  width: auto;
+  overflow: scroll;
 `;
 
 export {

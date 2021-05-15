@@ -3,8 +3,8 @@ import styled from "styled-components";
 import Header from "./partials/Header";
 import Details from "./Details";
 import DreamBike from "./Bike";
-import { Drawer } from "antd";
-import ThemeChange from "./ThemeChange";
+
+import BookNow from "./BookNow";
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Home = ({ setCurrentTheme, curretTheme }) => {
+const Home = ({ curretTheme }) => {
   const [currentBike, setCurrentBike] = useState("M1");
   const [showDrawer, setShowDrawer] = useState(false);
   useEffect(() => {
@@ -23,7 +23,7 @@ const Home = ({ setCurrentTheme, curretTheme }) => {
 
   return (
     <Wrapper>
-      <Header curretTheme={curretTheme} />
+      <Header curretTheme={curretTheme} setCurrentBike={setCurrentBike} />
       <DreamBike
         currentBike={currentBike}
         setCurrentBike={setCurrentBike}
@@ -31,20 +31,14 @@ const Home = ({ setCurrentTheme, curretTheme }) => {
         curretTheme={curretTheme}
       />
       <Details currentBike={currentBike} setCurrentBike={setCurrentBike} />
+
       {showDrawer && (
-        <Drawer
-          visible={showDrawer}
-          title="Basic Drawer"
-          placement="right"
-          closable={true}
-          onClose={() => setShowDrawer(false)}
-          getContainer={false}
-          style={{ position: "absolute" }}
-        >
-          <p>Some contents...</p>
-        </Drawer>
+        <BookNow
+          showDrawer={showDrawer}
+          setShowDrawer={setShowDrawer}
+          currentBike={currentBike}
+        />
       )}
-      <ThemeChange setCurrentTheme={setCurrentTheme} />
     </Wrapper>
   );
 };

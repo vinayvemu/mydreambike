@@ -1,9 +1,9 @@
 import React from "react";
 
-const DucatiM2 = () => (
+const DucatiM2 = ({ height, width }) => (
   <svg
-    width="1150"
-    height="650"
+    width={width || "1150"}
+    height={height || "650"}
     viewBox="0 0 1226 690"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

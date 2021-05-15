@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React from "react";
+
 import DucatiM1 from "../../components/Icons/DucatiM1";
 import DucatiM2 from "../../components/Icons/DucatiM2";
 import DucatiM3 from "../../components/Icons/DucatiM3";
@@ -16,7 +16,7 @@ import {
   ImageContainer,
   BookNowTitle,
 } from "./BikeCSS";
-const BookNow = styled.div``;
+
 const DreamBike = ({
   currentBike,
   setCurrentBike,
@@ -91,9 +91,9 @@ const DreamBike = ({
         {getModelNum()}
       </LogoWrapper>
       <Wrapper>
-        <ArrowWrapper>
+        {/* <ArrowWrapper>
           <ArrowLeft onClick={() => onClickLeft()} color={color} />
-        </ArrowWrapper>
+        </ArrowWrapper> */}
         <ImageContainer>
           <BookNowTitle onClick={() => setShowDrawer(true)}>
             book now
@@ -101,9 +101,9 @@ const DreamBike = ({
           {getCurrentBike()}
         </ImageContainer>
 
-        <ArrowWrapper>
+        {/* <ArrowWrapper>
           <ArrowRight onClick={() => onClickRight()} color={color} />
-        </ArrowWrapper>
+        </ArrowWrapper> */}
       </Wrapper>
     </Container>
   );

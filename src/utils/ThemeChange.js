@@ -5,6 +5,9 @@ import { Menu, Dropdown } from "antd";
 
 const Theme = styled.div`
   display: flex;
+  position: absolute;
+  bottom: 15;
+  background: #fff;
   float: right;
   border-radius: 50%;
   height: 44px;
@@ -17,9 +20,7 @@ const Theme = styled.div`
   color: #000;
   transition: color 0.3s;
   cursor: pointer;
-  margin-left: auto;
-  margin-right: -5%;
-  margin-top: -5%;
+  left: 96%;
 `;
 const IconWrapper = styled.span`
   padding-top: 5px;
@@ -28,7 +29,7 @@ const IconWrapper = styled.span`
 `;
 const Item = styled(Menu.Item)`
   background-color: transparent !important;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #e4e7ea;
   cursor: pointer;
   &:hover {
     color: #1b63a9;
