@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-const MenuIcon = () => (
+const MenuIcon = ({ color }) => (
   <svg
     width="32"
     height="22"
@@ -8,9 +8,9 @@ const MenuIcon = () => (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="32" height="2" fill="white" />
-    <rect y="10" width="32" height="2" fill="white" />
-    <rect y="20" width="32" height="2" fill="white" />
+    <rect width="32" height="2" fill={color || "white"} />
+    <rect y="10" width="32" height="2" fill={color || "white"} />
+    <rect y="20" width="32" height="2" fill={color || "white"} />
   </svg>
 );
 

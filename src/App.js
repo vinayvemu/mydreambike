@@ -1,6 +1,32 @@
-import React from 'react';
-import DreamBike from './modules/index';
+import React, { useState } from "react";
+import Home from "./modules/index";
+import styled from "styled-components";
+import "antd/dist/antd.css";
 
-export default function App() {
-  return <DreamBike />;
-}
+const App = () => {
+  const [curretTheme, setCurrentTheme] = useState("light");
+
+  const getBackground = () => {
+    switch (curretTheme) {
+      case "light":
+        return "#f0f8ff";
+
+      case "dark":
+        return "#141414";
+
+      default:
+        return "#f0f8ff";
+    }
+  };
+  const PageWrapper = styled.div`
+    height: 100%;
+    display: block;
+    background: ${getBackground()}; //linear-gradient(45deg, black, rgb(60 49 13 / 15%));
+  `;
+  return (
+    <PageWrapper>
+      <Home setCurrentTheme={setCurrentTheme} curretTheme={curretTheme} />
+    </PageWrapper>
+  );
+};
+export default App;
