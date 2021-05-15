@@ -3,8 +3,8 @@ import React from "react";
 import DucatiM1 from "../../../../components/Icons/DucatiM1";
 import DucatiM2 from "../../../../components/Icons/DucatiM2";
 import DucatiM3 from "../../../../components/Icons/DucatiM3";
-import ArrowLeft from "../../../../components/Icons/ArrowLeft";
-import ArrowRight from "../../../../components/Icons/ArrowRight";
+// import ArrowLeft from "../../../../components/Icons/ArrowLeft";
+// import ArrowRight from "../../../../components/Icons/ArrowRight";
 import DucatiLogo from "../../../../components/Icons/Logo";
 import "./BikeCSS";
 import {
