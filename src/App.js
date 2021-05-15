@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Home from "./modules/index";
+import Home from "./modules/Home/container/index";
 import styled from "styled-components";
 import "antd/dist/antd.css";
 import ThemeChange from "./utils/ThemeChange";

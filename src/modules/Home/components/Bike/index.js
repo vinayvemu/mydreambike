@@ -1,12 +1,12 @@
 import React from "react";
 
-import DucatiM1 from "../../components/Icons/DucatiM1";
-import DucatiM2 from "../../components/Icons/DucatiM2";
-import DucatiM3 from "../../components/Icons/DucatiM3";
-import ArrowLeft from "../../components/Icons/ArrowLeft";
-import ArrowRight from "../../components/Icons/ArrowRight";
-import DucatiLogo from "../../components/Icons/Logo";
-import "../../style.css";
+import DucatiM1 from "../../../../components/Icons/DucatiM1";
+import DucatiM2 from "../../../../components/Icons/DucatiM2";
+import DucatiM3 from "../../../../components/Icons/DucatiM3";
+import ArrowLeft from "../../../../components/Icons/ArrowLeft";
+import ArrowRight from "../../../../components/Icons/ArrowRight";
+import DucatiLogo from "../../../../components/Icons/Logo";
+import "./BikeCSS";
 import {
   Container,
   Wrapper,
@@ -18,13 +18,13 @@ import {
 } from "./BikeCSS";
 
 const DreamBike = ({
-  currentBike,
-  setCurrentBike,
-  setShowDrawer,
+  activeBike,
+  setActiveBike,
+  setShowBookingForm,
   curretTheme,
 }) => {
   const getCurrentBike = () => {
-    switch (currentBike) {
+    switch (activeBike) {
       case "M1":
         return <DucatiM1 />;
       case "M2":
@@ -37,41 +37,41 @@ const DreamBike = ({
     }
   };
   const onClickLeft = () => {
-    switch (currentBike) {
+    switch (activeBike) {
       case "M1":
-        setCurrentBike("M3");
+        setActiveBike("M3");
         break;
       case "M2":
-        setCurrentBike("M1");
+        setActiveBike("M1");
         break;
       case "M3":
-        setCurrentBike("M2");
+        setActiveBike("M2");
         break;
 
       default:
-        setCurrentBike("M1");
+        setActiveBike("M1");
         break;
     }
   };
   const onClickRight = () => {
-    switch (currentBike) {
+    switch (activeBike) {
       case "M1":
-        setCurrentBike("M2");
+        setActiveBike("M2");
         break;
       case "M2":
-        setCurrentBike("M3");
+        setActiveBike("M3");
         break;
       case "M3":
-        setCurrentBike("M1");
+        setActiveBike("M1");
         break;
 
       default:
-        setCurrentBike("M1");
+        setActiveBike("M1");
         break;
     }
   };
   const getModelNum = () => {
-    switch (currentBike) {
+    switch (activeBike) {
       case "M1":
         return <ModelNumber>797</ModelNumber>;
       case "M2":
@@ -95,7 +95,7 @@ const DreamBike = ({
           <ArrowLeft onClick={() => onClickLeft()} color={color} />
         </ArrowWrapper> */}
         <ImageContainer>
-          <BookNowTitle onClick={() => setShowDrawer(true)}>
+          <BookNowTitle onClick={() => setShowBookingForm(true)}>
             book now
           </BookNowTitle>
           {getCurrentBike()}

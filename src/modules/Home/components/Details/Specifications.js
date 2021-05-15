@@ -30,7 +30,7 @@ const Data = styled.div`
   color: #181818;
 `;
 
-const Specifications = ({ currentBike }) => {
+const Specifications = ({ activeBike }) => {
   const specificationsData = [
     {
       name: "M1",
@@ -61,23 +61,23 @@ const Specifications = ({ currentBike }) => {
     },
   ];
 
-  const [activeBike, setActiveBike] = useState({});
+  const [active, setActive] = useState({});
 
   useEffect(() => {
-    if (currentBike) {
-      let selectedBike =
-        specificationsData.filter((item) => item.name == currentBike) || {};
-      setActiveBike(selectedBike.length > 0 ? selectedBike[0] : {});
+    if (activeBike) {
+      let selected =
+        specificationsData.filter((item) => item.name == activeBike) || {};
+      setActive(selected.length > 0 ? selected[0] : {});
     }
-  }, [currentBike]);
+  }, [activeBike]);
 
   return (
     <Wrapper>
-      {Object.keys(activeBike).map((item, idx) => {
+      {Object.keys(active).map((item, idx) => {
         return (
           <DataWrapper key={idx}>
             <Label>{item}</Label>
-            <Data>{activeBike[item]}</Data>
+            <Data>{active[item]}</Data>
           </DataWrapper>
         );
       })}

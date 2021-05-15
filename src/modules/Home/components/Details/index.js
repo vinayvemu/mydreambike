@@ -14,11 +14,11 @@ const CardWrapper = styled.div`
   justify-content: space-around;
 `;
 
-const DetailsCard = ({ currentBike, setCurrentBike }) => {
+const DetailsCard = ({ activeBike, setActiveBike }) => {
   return (
     <CardWrapper>
-      <Specifications currentBike={currentBike} />
-      <ColorBox currentBike={currentBike} setCurrentBike={setCurrentBike} />
+      <Specifications activeBike={activeBike} />
+      <ColorBox activeBike={activeBike} setActiveBike={setActiveBike} />
       <Tagline />
     </CardWrapper>
   );

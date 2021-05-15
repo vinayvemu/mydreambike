@@ -27,11 +27,11 @@ const ActiveCB = styled.div`
   cursor: pointer;
 `;
 
-const ColorBox = ({ currentBike, setCurrentBike }) => {
+const ColorBox = ({ activeBike, setActiveBike }) => {
   const colors = ["#DF1F26", "#141414", "#E4E4E4"];
   const [currentColor, setCurrentColor] = useState("");
   useEffect(() => {
-    switch (currentBike) {
+    switch (activeBike) {
       case "M1":
         setCurrentColor("#DF1F26");
         break;
@@ -46,32 +46,39 @@ const ColorBox = ({ currentBike, setCurrentBike }) => {
         setCurrentColor("");
         break;
     }
-  }, [currentBike]);
+  }, [activeBike]);
   const onClick = (color) => {
     switch (color) {
       case "#DF1F26":
-        setCurrentBike("M1");
+        setActiveBike("M1");
         break;
       case "#141414":
-        setCurrentBike("M2");
+        setActiveBike("M2");
         break;
       case "#E4E4E4":
-        setCurrentBike("M3");
+        setActiveBike("M3");
         break;
 
       default:
         break;
     }
   };
-  console.log("currentColor", currentBike, currentColor);
 
   return (
     <GridRow>
-      {colors.map((color) =>
+      {colors.map((color, index) =>
         color == currentColor ? (
-          <ActiveCB background={color} onClick={() => onClick(color)} />
+          <ActiveCB
+            background={color}
+            onClick={() => onClick(color)}
+            key={index}
+          />
         ) : (
-          <InactiveCB background={color} onClick={() => onClick(color)} />
+          <InactiveCB
+            background={color}
+            onClick={() => onClick(color)}
+            key={index}
+          />
         )
       )}
     </GridRow>

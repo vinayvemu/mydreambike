@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Drawer from "../components/Drawer";
-import DucatiM1 from "../components/Icons/DucatiM1";
-import DucatiM2 from "../components/Icons/DucatiM2";
-import DucatiM3 from "../components/Icons/DucatiM3";
+import Drawer from "../../../components/Drawer";
+import DucatiM1 from "../../../components/Icons/DucatiM1";
+import DucatiM2 from "../../../components/Icons/DucatiM2";
+import DucatiM3 from "../../../components/Icons/DucatiM3";
 import { Button, Form, Input } from "antd";
-import SuccessNotification from "../utils/SuccessNotification";
+import SuccessNotification from "../../../utils/SuccessNotification";
 import styled from "styled-components";
 
 const ButtonWrapper = styled.div`
@@ -19,19 +19,29 @@ const ButtonWrapper = styled.div`
   background: #fff;
 `;
 
-const BookNow = ({ showDrawer, setShowDrawer, currentBike }) => {
+const BookNow = ({
+  showBookingForm,
+  setShowBookingForm,
+  activeBike,
+  setUserData,
+}) => {
   const [loading, setLoading] = useState(false);
-  const onFinish = () => {
+  const [form] = Form.useForm();
+  const onFinish = (values) => {
+    setUserData(values);
     setLoading(true);
     setTimeout(() => {
-      SuccessNotification("Congratulations, We will get in touch Shortly ...!");
-      setShowDrawer(false);
+      SuccessNotification(
+        `Congratulations ${values.name}, We will get in touch Shortly ...!`
+      );
+      form.resetFields();
+      setShowBookingForm(false);
       setLoading(false);
     }, 1500);
   };
 
   const getCurrentBike = () => {
-    switch (currentBike) {
+    switch (activeBike) {
       case "M1":
         return <DucatiM1 height="300" width="-webkit-fill-available" />;
       case "M2":
@@ -87,7 +97,7 @@ const BookNow = ({ showDrawer, setShowDrawer, currentBike }) => {
         </Form.Item>
         <ButtonWrapper>
           <Button
-            onClick={() => setShowDrawer(false)}
+            onClick={() => setShowBookingForm(false)}
             style={{ marginRight: 8 }}
           >
             Cancel
@@ -104,14 +114,14 @@ const BookNow = ({ showDrawer, setShowDrawer, currentBike }) => {
   return (
     <div>
       <Drawer
-        visible={showDrawer}
+        visible={showBookingForm}
         loading={loading}
         spin={true}
         title="Book Now...!!!"
         placement="right"
         width={"30%"}
         closable={true}
-        onClose={() => setShowDrawer(false)}
+        onClose={() => setShowBookingForm(false)}
         getContainer={false}
         style={{ position: "absolute" }}
         content={getContent()}

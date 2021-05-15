@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import MenuIcon from "../../components/Icons/Menu";
+import MenuIcon from "../../../../components/Icons/Menu";
 import { Menu, Dropdown } from "antd";
 
 const Wrapper = styled.div`
@@ -22,19 +22,19 @@ const Item = styled(Menu.Item)`
   }
 `;
 
-const Header = ({ curretTheme, setCurrentBike }) => {
+const Header = ({ curretTheme, setActiveBike }) => {
   const [showMenu, setShowMenu] = useState(false);
-  console.log("showmwn", showMenu);
+
   const color = curretTheme == "light" ? "#141414" : "#ffffff";
   const menu = (
     <Menu>
-      <Item key="M1" onClick={(e) => setCurrentBike(e.key)}>
+      <Item key="M1" onClick={(e) => setActiveBike(e.key)}>
         Ducati M1
       </Item>
-      <Item key="M2" onClick={(e) => setCurrentBike(e.key)}>
+      <Item key="M2" onClick={(e) => setActiveBike(e.key)}>
         Ducati M2
       </Item>
-      <Item key="M3" onClick={(e) => setCurrentBike(e.key)}>
+      <Item key="M3" onClick={(e) => setActiveBike(e.key)}>
         Ducati M3
       </Item>
     </Menu>
