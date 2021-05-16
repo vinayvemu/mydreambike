@@ -9,7 +9,7 @@ import App from "./App";
 import "antd/dist/antd.css";
 import "./style.css";
 
-import ThemeChange from "./modules/Theme/container/index";
+import DynamicTheme from "./modules/Theme/container/index";
 
 const middleware = [thunk];
 if (process.env.NODE_ENV !== "production") {
@@ -20,8 +20,9 @@ const store = createStore(reducer, applyMiddleware(...middleware));
 
 render(
   <Provider store={store}>
-    <App />
-    <ThemeChange />
+    <DynamicTheme>
+      <App />
+    </DynamicTheme>
   </Provider>,
   document.getElementById("root")
 );

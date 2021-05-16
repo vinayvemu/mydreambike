@@ -21,7 +21,7 @@ const DreamBike = ({
   activeBike,
   setActiveBike,
   setShowBookingForm,
-  curretTheme,
+  currentTheme,
 }) => {
   const getCurrentBike = () => {
     switch (activeBike) {
@@ -83,7 +83,7 @@ const DreamBike = ({
         return null;
     }
   };
-  const color = curretTheme == "light" ? "#8c8c8c" : "#ffffff";
+  const color = currentTheme == "light" ? "#8c8c8c" : "#ffffff";
   return (
     <Container>
       <LogoWrapper>

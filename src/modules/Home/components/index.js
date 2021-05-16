@@ -5,7 +5,7 @@ import Details from "./Details";
 import DreamBike from "./Bike";
 
 import BookNow from "../../Booking/container/index";
-
+import ThemeChangeButton from "../../Theme/components/ThemeChangeButton";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -15,23 +15,25 @@ const Wrapper = styled.div`
 `;
 
 const Home = ({
-  curretTheme,
+  currentTheme,
   activeBike,
   setActiveBike,
   setShowBookingForm,
+  setCurrentTheme,
 }) => {
   return (
     <Wrapper>
-      <Header curretTheme={curretTheme} setActiveBike={setActiveBike} />
+      <Header currentTheme={currentTheme} setActiveBike={setActiveBike} />
       <DreamBike
         activeBike={activeBike}
         setActiveBike={setActiveBike}
-        curretTheme={curretTheme}
+        currentTheme={currentTheme}
         setShowBookingForm={setShowBookingForm}
       />
       <Details activeBike={activeBike} setActiveBike={setActiveBike} />
 
       <BookNow />
+      <ThemeChangeButton setCurrentTheme={setCurrentTheme} />
     </Wrapper>
   );
 };

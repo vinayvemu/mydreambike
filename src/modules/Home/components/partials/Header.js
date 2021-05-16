@@ -22,10 +22,10 @@ const Item = styled(Menu.Item)`
   }
 `;
 
-const Header = ({ curretTheme, setActiveBike }) => {
+const Header = ({ currentTheme, setActiveBike }) => {
   const [showMenu, setShowMenu] = useState(false);
 
-  const color = curretTheme == "light" ? "#141414" : "#ffffff";
+  const color = currentTheme == "light" ? "#141414" : "#ffffff";
   const menu = (
     <Menu>
       <Item key="M1" onClick={(e) => setActiveBike(e.key)}>
